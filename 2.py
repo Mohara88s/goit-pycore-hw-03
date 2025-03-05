@@ -3,7 +3,7 @@ import random
 
 def get_numbers_ticket(min:int, max:int, quantity:int) -> List[int]:
     list_of_num=[]
-    if min>=1 and max<=1000 and max>=quantity and quantity>=min:
+    if min>=1 and max<=1000 and max>=quantity and quantity>=min and max-min>=quantity:
         while len(list_of_num) < quantity:
             num = random.randint(min, max)
             if not num in list_of_num: 
@@ -26,4 +26,7 @@ lottery_numbers = get_numbers_ticket(1,100,200)
 print("Ваші лотерейні числа:", lottery_numbers)
 
 lottery_numbers = get_numbers_ticket(100,100,20) 
+print("Ваші лотерейні числа:", lottery_numbers)
+
+lottery_numbers = get_numbers_ticket(10, 12, 11)
 print("Ваші лотерейні числа:", lottery_numbers)
